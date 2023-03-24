@@ -101,7 +101,7 @@ Material:
     - _Dithering: -0.72
     - _DstBlend: 0
     - _Emission: 1
-    - _EmissionAmount: 25
+    - _EmissionAmount: 15
     - _EnvironmentReflections: 1
     - _Foam: 1
     - _FoamAmount: 1
@@ -144,8 +144,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailsOffset: {r: 2.1, g: 20, b: 0, a: 0}
     - _DetailsStrength: {r: 5.6, g: 1, b: 0, a: 0}
-    - _EmissionColor: {r: 1.4435663, g: 1.4241875, b: 1.6679233, a: 1.8040804}
-    - _FoamColor: {r: 0, g: 1, b: 0.05453444, a: 1}
+    - _EmissionColor: {r: 248.54807, g: 71.17609, b: 295.34955, a: 379.24594}
+    - _FoamColor: {r: 0, g: 1, b: 0.6967735, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Strength: {r: 10, g: 10, b: 0, a: 0}
