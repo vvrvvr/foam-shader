@@ -120,7 +120,7 @@ public class MaterialManager : MonoBehaviour
         mat.SetColor("_EmissionColor", col);
         emissionColorScriptValue = mat.GetColor("_EmissionColor");
         
-        
+        _comboCounter.IncreaseCombo();
     }
 
     public void SliderEmissionIntensity()
