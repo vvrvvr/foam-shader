@@ -92,16 +92,16 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Contrast: 0.52717805
+    - _Contrast: -0.26363528
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Details: 0
+    - _Details: 1
     - _Dithering: -0.72
     - _DstBlend: 0
-    - _Emission: 0
-    - _EmissionAmount: 5
+    - _Emission: 1
+    - _EmissionAmount: 20
     - _EnvironmentReflections: 1
     - _Foam: 0
     - _FoamAmount: 1
@@ -113,9 +113,9 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _GraientNoise: 1
-    - _Metallic: 0.44821298
-    - _Modulo: 1
-    - _NormalMapHeight: 0.010227859
+    - _Metallic: 0.8196294
+    - _Modulo: 0
+    - _NormalMapHeight: 0.1
     - _Normal_Map: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -131,8 +131,8 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _TimeMultiplier: 2
-    - _VoronoiNoiseMultiplier: 0
+    - _TimeMultiplier: 5
+    - _VoronoiNoiseMultiplier: 10
     - _VoronoiWaveScale: 2
     - _WaveScale: 0.3
     - _WaveScale2: 2
@@ -142,9 +142,9 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DetailsOffset: {r: 2.1, g: 20, b: 0, a: 0}
+    - _DetailsOffset: {r: 2.1, g: 2.1, b: 0, a: 0}
     - _DetailsStrength: {r: 5.6, g: 1, b: 0, a: 0}
-    - _EmissionColor: {r: 4.8359585, g: 4.261118, b: 4.261118, a: 5.23073}
+    - _EmissionColor: {r: 90.50517, g: 85.64912, b: 39.417076, a: 90.50517}
     - _FoamColor: {r: 0, g: 1, b: 0.05453444, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
