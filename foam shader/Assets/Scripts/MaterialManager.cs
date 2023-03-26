@@ -15,11 +15,13 @@ public class MaterialManager : MonoBehaviour
     [SerializeField] private Toggle _gradientNoise;
     [SerializeField] private TMP_InputField _waveScale;
     [SerializeField] private TMP_InputField _waveSpeed;
+    [SerializeField] private GameObject gradientNoiseContainer;
     [SerializeField] private Toggle _emission;
     [SerializeField] private FlexibleColorPicker _emissionColor;
     [SerializeField] private Slider _emissionIntensitySlider;
     private Color emissionColorScriptValue;
     [SerializeField] private TMP_InputField _emissionAmount;
+    [SerializeField] private GameObject emissionContainer;
 
 
     [SerializeField] private Toggle _foam;
@@ -30,9 +32,11 @@ public class MaterialManager : MonoBehaviour
     [SerializeField] private TMP_InputField _foamAmount;
     [SerializeField] private TMP_InputField _foamSpeed;
     [SerializeField] private TMP_InputField _foamScale;
+    [SerializeField] private GameObject foamContainer;
 
     [SerializeField] private Toggle _normalMap;
     [SerializeField] private Slider _normalMapSlider;
+    [SerializeField] private GameObject normalMapContainer;
 
 
     [SerializeField] private Toggle _details;
@@ -44,11 +48,13 @@ public class MaterialManager : MonoBehaviour
     [SerializeField] private TMP_InputField _detailsStrengthY;
     private float detailsStrengthXscript;
     private float detailsStrengthYscript;
+    [SerializeField] private GameObject detailsContainer;
 
 
     [SerializeField] private Toggle _radial;
     [SerializeField] private TMP_InputField _timeMultiplier;
-    
+    [SerializeField] private GameObject radialContainer;
+
     [SerializeField] private TMP_InputField _voronoiNoise;
     [SerializeField] private TMP_InputField _voronoiScale;
 
@@ -60,6 +66,7 @@ public class MaterialManager : MonoBehaviour
     {
         _comboCounter = GetComponent<ComboCounter>();
         SetStartValues();
+        _comboCounter.isStarting = false;
     }
 
     public void Moodulo()
@@ -89,9 +96,15 @@ public class MaterialManager : MonoBehaviour
     public void GradientNoise()
     {
         if (_gradientNoise.isOn)
+        {
             mat.SetFloat("_GraientNoise", 1f);
+            gradientNoiseContainer.SetActive(true);
+        }
         else
+        {
             mat.SetFloat("_GraientNoise", 0f);
+            gradientNoiseContainer.SetActive(false);
+        }
     }
 
     public void WaveScale()
@@ -107,10 +120,16 @@ public class MaterialManager : MonoBehaviour
     public void Emission()
     {
         if (_emission.isOn)
+        {
             mat.SetFloat("_Emission", 1f);
+            emissionContainer.SetActive(true);
+        }
         else
+        {
             mat.SetFloat("_Emission", 0f);
-        
+            emissionContainer.SetActive(false);
+        }
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -119,7 +138,6 @@ public class MaterialManager : MonoBehaviour
         var col = ChangeHDRColorIntensity(_emissionColor.color, _emissionIntensitySlider.value);
         mat.SetColor("_EmissionColor", col);
         emissionColorScriptValue = mat.GetColor("_EmissionColor");
-        
         _comboCounter.IncreaseCombo();
     }
 
@@ -137,9 +155,15 @@ public class MaterialManager : MonoBehaviour
     public void Foam()
     {
         if (_foam.isOn)
+        {
             mat.SetFloat("_Foam", 1f);
+            foamContainer.SetActive(true);
+        }
         else
+        {
             mat.SetFloat("_Foam", 0f);
+            foamContainer.SetActive(false);
+        }
     }
 
     public void FoamColor()
@@ -178,10 +202,17 @@ public class MaterialManager : MonoBehaviour
     public void NormalMap()
     {
         if (_normalMap.isOn)
+        {
             mat.SetFloat("_Normal_Map", 1f);
+            normalMapContainer.SetActive(true);
+        }
         else
+        {
             mat.SetFloat("_Normal_Map", 0f);
+            normalMapContainer.SetActive(false);
+        }
     }
+
     public void SliderNormalMapHeight()
     {
         mat.SetFloat("_NormalMapHeight", _normalMapSlider.value);
@@ -190,42 +221,59 @@ public class MaterialManager : MonoBehaviour
     public void Details()
     {
         if (_details.isOn)
+        {
             mat.SetFloat("_Details", 1f);
+            detailsContainer.SetActive(true);
+        }
         else
+        {
             mat.SetFloat("_Details", 0f);
+            detailsContainer.SetActive(false);
+        }
     }
+
     public void DetailsOffsetX()
     {
         detailsXscript = ConvertStringToFloat(_detailsOffsetX.text);
         Vector4 offset = new Vector4(detailsXscript, detailsYscript, 0f, 0f);
-        mat.SetVector("_DetailsOffset",offset );
+        mat.SetVector("_DetailsOffset", offset);
     }
+
     public void DetailsOffsetY()
     {
         detailsYscript = ConvertStringToFloat(_detailsOffsetY.text);
         Vector4 offset = new Vector4(detailsXscript, detailsYscript, 0f, 0f);
-        mat.SetVector("_DetailsOffset",offset );
+        mat.SetVector("_DetailsOffset", offset);
     }
+
     public void DetailsStrengthX()
     {
         detailsStrengthXscript = ConvertStringToFloat(_detailsStrengthX.text);
         Vector4 strength = new Vector4(detailsStrengthXscript, detailsStrengthYscript, 0f, 0f);
-        mat.SetVector("_DetailsStrength", strength );
+        mat.SetVector("_DetailsStrength", strength);
     }
+
     public void DetailsStrengthY()
     {
         detailsStrengthYscript = ConvertStringToFloat(_detailsStrengthY.text);
         Vector4 strength = new Vector4(detailsStrengthXscript, detailsStrengthYscript, 0f, 0f);
-        mat.SetVector("_DetailsStrength", strength );
+        mat.SetVector("_DetailsStrength", strength);
     }
-    
+
     public void Radial()
     {
         if (_radial.isOn)
+        {
             mat.SetFloat("_Raidal", 1f);
+            radialContainer.SetActive(true);
+        }
         else
+        {
             mat.SetFloat("_Raidal", 0f);
+            radialContainer.SetActive(false);
+        }
     }
+
     public void TimeMultiplier()
     {
         mat.SetFloat("_TimeMultiplier", ConvertStringToFloat(_timeMultiplier.text));
@@ -235,6 +283,7 @@ public class MaterialManager : MonoBehaviour
     {
         mat.SetFloat("_VoronoiNoiseMultiplier", ConvertStringToFloat(_voronoiNoise.text));
     }
+
     public void VoronoiScale()
     {
         mat.SetFloat("_VoronoiWaveScale", ConvertStringToFloat(_voronoiScale.text));
@@ -247,10 +296,12 @@ public class MaterialManager : MonoBehaviour
         _metallicSlider.value = mat.GetFloat("_Metallic");
         _smothnessSlider.value = mat.GetFloat("_Smothness");
         _gradientNoise.isOn = Convert.ToBoolean(mat.GetFloat("_GraientNoise"));
+        GradientNoise();
         _waveScale.text = mat.GetFloat("_WaveScale2").ToString();
 
         //emission
         _emission.isOn = Convert.ToBoolean(mat.GetFloat("_Emission"));
+        Emission();
         var emissionCol = mat.GetColor("_EmissionColor");
         emissionColorScriptValue = emissionCol;
         _emissionColor.SetColor(emissionCol);
@@ -259,17 +310,20 @@ public class MaterialManager : MonoBehaviour
 
         //foam
         _foam.isOn = Convert.ToBoolean(mat.GetFloat("_Foam"));
+        Foam();
         _foamCutoff.text = mat.GetFloat("_FoamCutoff").ToString();
         _foamAmount.text = mat.GetFloat("_FoamAmount").ToString();
         _foamSpeed.text = mat.GetFloat("_FoamSpeed").ToString();
         _foamScale.text = mat.GetFloat("_FoamScale").ToString();
-        
+
         //normal map
         _normalMap.isOn = Convert.ToBoolean(mat.GetFloat("_Normal_Map"));
+        NormalMap();
         _normalMapSlider.value = mat.GetFloat("_NormalMapHeight");
-        
+
         //detail
         _details.isOn = Convert.ToBoolean(mat.GetFloat("_Details"));
+        Details();
         Vector4 dOffset = mat.GetVector("_DetailsOffset");
         _detailsOffsetX.text = dOffset.x.ToString();
         _detailsOffsetY.text = dOffset.y.ToString();
@@ -280,11 +334,12 @@ public class MaterialManager : MonoBehaviour
         _detailsStrengthY.text = sOffset.y.ToString();
         detailsStrengthXscript = sOffset.x;
         detailsStrengthYscript = sOffset.y;
-        
+
         //radial
         _radial.isOn = Convert.ToBoolean(mat.GetFloat("_Raidal"));
+        Radial();
         _timeMultiplier.text = mat.GetFloat("_TimeMultiplier").ToString();
-        
+
         //voronoi
         _voronoiNoise.text = mat.GetFloat("_VoronoiNoiseMultiplier").ToString();
         _voronoiScale.text = mat.GetFloat("_VoronoiWaveScale").ToString();
@@ -304,7 +359,7 @@ public class MaterialManager : MonoBehaviour
 
         return num;
     }
-    
+
 
     private Color ChangeHDRColorIntensity(Color subjectColor, float intensityChange)
     {

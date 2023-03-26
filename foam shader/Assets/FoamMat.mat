@@ -97,10 +97,10 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Details: 1
+    - _Details: 0
     - _Dithering: -0.72
     - _DstBlend: 0
-    - _Emission: 1
+    - _Emission: 0
     - _EmissionAmount: 20
     - _EnvironmentReflections: 1
     - _Foam: 0
@@ -116,7 +116,7 @@ Material:
     - _Metallic: 0.8196294
     - _Modulo: 0
     - _NormalMapHeight: 0.1
-    - _Normal_Map: 1
+    - _Normal_Map: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -144,7 +144,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailsOffset: {r: 2.1, g: 2.1, b: 0, a: 0}
     - _DetailsStrength: {r: 5.6, g: 1, b: 0, a: 0}
-    - _EmissionColor: {r: 90.50517, g: 85.64912, b: 39.417076, a: 90.50517}
+    - _EmissionColor: {r: 0.9245283, g: 0.8146315, b: 0.8146315, a: 0.99999994}
     - _FoamColor: {r: 0, g: 1, b: 0.05453444, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

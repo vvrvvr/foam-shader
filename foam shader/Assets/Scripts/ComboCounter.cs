@@ -9,10 +9,13 @@ public class ComboCounter : MonoBehaviour
     private float _lastComboTime = 0.0f;
     [SerializeField] private DamageNumber _damageNumbers;
     [SerializeField] private RectTransform _rect;
+    public bool isStarting = true;
     
 
     public void IncreaseCombo()
     {
+        if (isStarting)
+            return;
         if (Time.time - _lastComboTime <= _maxTimeBetweenCombos)
         {
             _comboCounter++;
@@ -37,6 +40,9 @@ public class ComboCounter : MonoBehaviour
 
     private void Update()
     {
+        if (isStarting)
+            return;
+        
         if (Time.time - _lastComboTime > _maxTimeBetweenCombos)
         {
             _comboCounter = 0;
