@@ -75,21 +75,29 @@ public class MaterialManager : MonoBehaviour
             mat.SetFloat("_Modulo", 1f);
         else
             mat.SetFloat("_Modulo", 0f);
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void SliderContrast()
     {
         mat.SetFloat("_Contrast", _contrastSlider.value);
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void SliderMetallic()
     {
         mat.SetFloat("_Metallic", _metallicSlider.value);
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void SliderSmothness()
     {
         mat.SetFloat("_Smothness", _smothnessSlider.value);
+        
+        _comboCounter.IncreaseCombo();
     }
 
 
@@ -105,16 +113,22 @@ public class MaterialManager : MonoBehaviour
             mat.SetFloat("_GraientNoise", 0f);
             gradientNoiseContainer.SetActive(false);
         }
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void WaveScale()
     {
         mat.SetFloat("_WaveScale2", ConvertStringToFloat(_waveScale.text));
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void WaveSpeed()
     {
         mat.SetFloat("_WaveSpeed", ConvertStringToFloat(_waveSpeed.text));
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void Emission()
@@ -138,6 +152,7 @@ public class MaterialManager : MonoBehaviour
         var col = ChangeHDRColorIntensity(_emissionColor.color, _emissionIntensitySlider.value);
         mat.SetColor("_EmissionColor", col);
         emissionColorScriptValue = mat.GetColor("_EmissionColor");
+        
         _comboCounter.IncreaseCombo();
     }
 
@@ -145,11 +160,15 @@ public class MaterialManager : MonoBehaviour
     {
         var col = ChangeHDRColorIntensity(emissionColorScriptValue, _emissionIntensitySlider.value);
         mat.SetColor("_EmissionColor", col);
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void EmissionAmount()
     {
         mat.SetFloat("_EmissionAmount", ConvertStringToFloat(_emissionAmount.text));
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void Foam()
@@ -164,6 +183,8 @@ public class MaterialManager : MonoBehaviour
             mat.SetFloat("_Foam", 0f);
             foamContainer.SetActive(false);
         }
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void FoamColor()
@@ -171,32 +192,44 @@ public class MaterialManager : MonoBehaviour
         var col = ChangeHDRColorIntensity(_foamColor.color, _foamIntensitySlider.value);
         mat.SetColor("_FoamColor", col);
         foamColorScriptValue = mat.GetColor("_FoamColor");
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void SliderFoamIntensity()
     {
         var col = ChangeHDRColorIntensity(foamColorScriptValue, _foamIntensitySlider.value);
         mat.SetColor("_FoamColor", col);
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void FoamCutoff()
     {
         mat.SetFloat("_FoamCutoff", ConvertStringToFloat(_foamCutoff.text));
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void FoamAmount()
     {
         mat.SetFloat("_FoamAmount", ConvertStringToFloat(_foamAmount.text));
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void FoamSpeed()
     {
         mat.SetFloat("_FoamSpeed", ConvertStringToFloat(_foamSpeed.text));
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void FoamScale()
     {
         mat.SetFloat("_FoamScale", ConvertStringToFloat(_foamScale.text));
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void NormalMap()
@@ -211,11 +244,15 @@ public class MaterialManager : MonoBehaviour
             mat.SetFloat("_Normal_Map", 0f);
             normalMapContainer.SetActive(false);
         }
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void SliderNormalMapHeight()
     {
         mat.SetFloat("_NormalMapHeight", _normalMapSlider.value);
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void Details()
@@ -230,6 +267,8 @@ public class MaterialManager : MonoBehaviour
             mat.SetFloat("_Details", 0f);
             detailsContainer.SetActive(false);
         }
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void DetailsOffsetX()
@@ -237,6 +276,8 @@ public class MaterialManager : MonoBehaviour
         detailsXscript = ConvertStringToFloat(_detailsOffsetX.text);
         Vector4 offset = new Vector4(detailsXscript, detailsYscript, 0f, 0f);
         mat.SetVector("_DetailsOffset", offset);
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void DetailsOffsetY()
@@ -244,6 +285,8 @@ public class MaterialManager : MonoBehaviour
         detailsYscript = ConvertStringToFloat(_detailsOffsetY.text);
         Vector4 offset = new Vector4(detailsXscript, detailsYscript, 0f, 0f);
         mat.SetVector("_DetailsOffset", offset);
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void DetailsStrengthX()
@@ -251,6 +294,8 @@ public class MaterialManager : MonoBehaviour
         detailsStrengthXscript = ConvertStringToFloat(_detailsStrengthX.text);
         Vector4 strength = new Vector4(detailsStrengthXscript, detailsStrengthYscript, 0f, 0f);
         mat.SetVector("_DetailsStrength", strength);
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void DetailsStrengthY()
@@ -258,6 +303,8 @@ public class MaterialManager : MonoBehaviour
         detailsStrengthYscript = ConvertStringToFloat(_detailsStrengthY.text);
         Vector4 strength = new Vector4(detailsStrengthXscript, detailsStrengthYscript, 0f, 0f);
         mat.SetVector("_DetailsStrength", strength);
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void Radial()
@@ -272,21 +319,29 @@ public class MaterialManager : MonoBehaviour
             mat.SetFloat("_Raidal", 0f);
             radialContainer.SetActive(false);
         }
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void TimeMultiplier()
     {
         mat.SetFloat("_TimeMultiplier", ConvertStringToFloat(_timeMultiplier.text));
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void VoronoiNoise()
     {
         mat.SetFloat("_VoronoiNoiseMultiplier", ConvertStringToFloat(_voronoiNoise.text));
+        
+        _comboCounter.IncreaseCombo();
     }
 
     public void VoronoiScale()
     {
         mat.SetFloat("_VoronoiWaveScale", ConvertStringToFloat(_voronoiScale.text));
+        
+        _comboCounter.IncreaseCombo();
     }
 
     private void SetStartValues()
