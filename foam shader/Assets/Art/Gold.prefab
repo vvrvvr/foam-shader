@@ -209,8 +209,8 @@ MonoBehaviour:
     speed: 10
     drag: 0
   enableStartRotation: 1
-  minRotation: -4
-  maxRotation: 4
+  minRotation: -5
+  maxRotation: 5
   rotationRandomFlip: 0
   enableRotateOverTime: 0
   minRotationSpeed: -15
@@ -261,9 +261,9 @@ MonoBehaviour:
   enableScaleByNumber: 1
   scaleByNumberSettings:
     fromNumber: 0
-    toNumber: 100
-    fromScale: 1
-    toScale: 2
+    toNumber: 300
+    fromScale: 2
+    toScale: 4
   enableScaleOverTime: 0
   scaleOverTime:
     serializedVersion: 2
@@ -295,7 +295,7 @@ MonoBehaviour:
     method: 1
     maxDistance: 20
     spawnDelay: 0.15
-    absorbDuration: 0.2
+    absorbDuration: 0.1
     scaleCurve:
       serializedVersion: 2
       m_Curve:
@@ -413,7 +413,7 @@ MonoBehaviour:
     radius: 4
     pushOffset: 0.8
   updateDelay: 0.0125
-  enablePooling: 1
+  enablePooling: 0
   poolSize: 50
   position: {x: 0, y: 0, z: 0}
 --- !u!210 &88908986781958022
