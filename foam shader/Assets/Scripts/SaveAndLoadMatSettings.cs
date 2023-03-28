@@ -4,12 +4,13 @@ using System.IO;
 
 public class SaveAndLoadMatSettings : MonoBehaviour
 {
-    //public Material _mat;
+    private CaptureScreenshot _captureScreenshot;
     private string filePath;
     [SerializeField]
 
     private void Start()
     {
+        _captureScreenshot = GetComponent<CaptureScreenshot>();
         // Указываем путь для сохранения и загрузки файла
         string desktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
         filePath = Path.Combine(desktopPath, "FoamSavedMaterial"); //, "materialSettings.json");
@@ -30,6 +31,8 @@ public class SaveAndLoadMatSettings : MonoBehaviour
         // Записываем JSON в файл
         string matName = "materialSettings" + number;
         File.WriteAllText(Path.Combine(filePath, $"{matName}.json"), jsonData);
+        _captureScreenshot.MakeScreenshot();
+        Debug.Log("texture and material saved");
     }
 
     public void LoadMaterialSettingsFromJson(Material _mat , int number)

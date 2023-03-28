@@ -92,15 +92,15 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Contrast: 1.4366875
+    - _Contrast: 1.1413505
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Details: 0
+    - _Details: 1
     - _Dithering: -0.72
     - _DstBlend: 0
-    - _Emission: 0
+    - _Emission: 1
     - _EmissionAmount: 12
     - _EnvironmentReflections: 1
     - _Foam: 1
@@ -113,10 +113,10 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _GraientNoise: 1
-    - _Metallic: 0.6158674
+    - _Metallic: 1
     - _Modulo: 1
-    - _NormalMapHeight: -0.059327047
-    - _Normal_Map: 1
+    - _NormalMapHeight: 0.011875701
+    - _Normal_Map: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -127,7 +127,7 @@ Material:
     - _Saturation: -4.29
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _Smothness: 0.29952306
+    - _Smothness: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0

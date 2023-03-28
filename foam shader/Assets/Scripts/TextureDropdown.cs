@@ -34,10 +34,6 @@ public class TextureDropdown : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SaveMaterialAndTexture();
-        }
         if (Input.GetKeyDown(KeyCode.L))
         {
             if(savedTextureNumber >1)
