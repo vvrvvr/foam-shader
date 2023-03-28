@@ -57,10 +57,18 @@ public class MaterialManager : MonoBehaviour
 
     [SerializeField] private TMP_InputField _voronoiNoise;
     [SerializeField] private TMP_InputField _voronoiScale;
+    [Space (10)]
+    [SerializeField] private Slider _mapSlider;
+    [SerializeField] private GameObject _mapCam;
+    [SerializeField] private float _zMin;
+    [SerializeField] private float _zMax;
 
-
+    [Space (10)]
     [SerializeField] private Material mat;
     private ComboCounter _comboCounter;
+
+    
+
 
     private void Start()
     {
@@ -75,28 +83,28 @@ public class MaterialManager : MonoBehaviour
             mat.SetFloat("_Modulo", 1f);
         else
             mat.SetFloat("_Modulo", 0f);
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void SliderContrast()
     {
         mat.SetFloat("_Contrast", _contrastSlider.value);
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void SliderMetallic()
     {
         mat.SetFloat("_Metallic", _metallicSlider.value);
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void SliderSmothness()
     {
         mat.SetFloat("_Smothness", _smothnessSlider.value);
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -113,21 +121,21 @@ public class MaterialManager : MonoBehaviour
             mat.SetFloat("_GraientNoise", 0f);
             gradientNoiseContainer.SetActive(false);
         }
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void WaveScale()
     {
         mat.SetFloat("_WaveScale2", ConvertStringToFloat(_waveScale.text));
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void WaveSpeed()
     {
         mat.SetFloat("_WaveSpeed", ConvertStringToFloat(_waveSpeed.text));
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -152,7 +160,7 @@ public class MaterialManager : MonoBehaviour
         var col = ChangeHDRColorIntensity(_emissionColor.color, _emissionIntensitySlider.value);
         mat.SetColor("_EmissionColor", col);
         emissionColorScriptValue = mat.GetColor("_EmissionColor");
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -160,14 +168,14 @@ public class MaterialManager : MonoBehaviour
     {
         var col = ChangeHDRColorIntensity(emissionColorScriptValue, _emissionIntensitySlider.value);
         mat.SetColor("_EmissionColor", col);
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void EmissionAmount()
     {
         mat.SetFloat("_EmissionAmount", ConvertStringToFloat(_emissionAmount.text));
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -183,7 +191,7 @@ public class MaterialManager : MonoBehaviour
             mat.SetFloat("_Foam", 0f);
             foamContainer.SetActive(false);
         }
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -192,7 +200,7 @@ public class MaterialManager : MonoBehaviour
         var col = ChangeHDRColorIntensity(_foamColor.color, _foamIntensitySlider.value);
         mat.SetColor("_FoamColor", col);
         foamColorScriptValue = mat.GetColor("_FoamColor");
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -200,35 +208,35 @@ public class MaterialManager : MonoBehaviour
     {
         var col = ChangeHDRColorIntensity(foamColorScriptValue, _foamIntensitySlider.value);
         mat.SetColor("_FoamColor", col);
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void FoamCutoff()
     {
         mat.SetFloat("_FoamCutoff", ConvertStringToFloat(_foamCutoff.text));
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void FoamAmount()
     {
         mat.SetFloat("_FoamAmount", ConvertStringToFloat(_foamAmount.text));
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void FoamSpeed()
     {
         mat.SetFloat("_FoamSpeed", ConvertStringToFloat(_foamSpeed.text));
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void FoamScale()
     {
         mat.SetFloat("_FoamScale", ConvertStringToFloat(_foamScale.text));
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -244,14 +252,14 @@ public class MaterialManager : MonoBehaviour
             mat.SetFloat("_Normal_Map", 0f);
             normalMapContainer.SetActive(false);
         }
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void SliderNormalMapHeight()
     {
         mat.SetFloat("_NormalMapHeight", _normalMapSlider.value);
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -267,7 +275,7 @@ public class MaterialManager : MonoBehaviour
             mat.SetFloat("_Details", 0f);
             detailsContainer.SetActive(false);
         }
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -276,7 +284,7 @@ public class MaterialManager : MonoBehaviour
         detailsXscript = ConvertStringToFloat(_detailsOffsetX.text);
         Vector4 offset = new Vector4(detailsXscript, detailsYscript, 0f, 0f);
         mat.SetVector("_DetailsOffset", offset);
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -285,7 +293,7 @@ public class MaterialManager : MonoBehaviour
         detailsYscript = ConvertStringToFloat(_detailsOffsetY.text);
         Vector4 offset = new Vector4(detailsXscript, detailsYscript, 0f, 0f);
         mat.SetVector("_DetailsOffset", offset);
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -294,7 +302,7 @@ public class MaterialManager : MonoBehaviour
         detailsStrengthXscript = ConvertStringToFloat(_detailsStrengthX.text);
         Vector4 strength = new Vector4(detailsStrengthXscript, detailsStrengthYscript, 0f, 0f);
         mat.SetVector("_DetailsStrength", strength);
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -303,7 +311,7 @@ public class MaterialManager : MonoBehaviour
         detailsStrengthYscript = ConvertStringToFloat(_detailsStrengthY.text);
         Vector4 strength = new Vector4(detailsStrengthXscript, detailsStrengthYscript, 0f, 0f);
         mat.SetVector("_DetailsStrength", strength);
-        
+
         _comboCounter.IncreaseCombo();
     }
 
@@ -319,29 +327,45 @@ public class MaterialManager : MonoBehaviour
             mat.SetFloat("_Raidal", 0f);
             radialContainer.SetActive(false);
         }
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void TimeMultiplier()
     {
         mat.SetFloat("_TimeMultiplier", ConvertStringToFloat(_timeMultiplier.text));
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void VoronoiNoise()
     {
         mat.SetFloat("_VoronoiNoiseMultiplier", ConvertStringToFloat(_voronoiNoise.text));
-        
+
         _comboCounter.IncreaseCombo();
     }
 
     public void VoronoiScale()
     {
         mat.SetFloat("_VoronoiWaveScale", ConvertStringToFloat(_voronoiScale.text));
+
+        _comboCounter.IncreaseCombo();
+    }
+
+    public void SliderMap()
+    {
+        float z = Mathf.Lerp(_zMin, _zMax, _mapSlider.value); // вычисляем новое значение координаты Z
+        Vector3 newPosition = _mapCam.transform.localPosition;
+        newPosition.z = z; // обновляем координату Z
+        _mapCam.transform.localPosition = newPosition;
         
         _comboCounter.IncreaseCombo();
+    }
+
+    private void SetMapSlider()
+    {
+        float sliderValue = Mathf.InverseLerp(_zMin, _zMax, _mapCam.transform.localPosition.z);
+        _mapSlider.value = sliderValue;
     }
 
     private void SetStartValues()
@@ -398,6 +422,9 @@ public class MaterialManager : MonoBehaviour
         //voronoi
         _voronoiNoise.text = mat.GetFloat("_VoronoiNoiseMultiplier").ToString();
         _voronoiScale.text = mat.GetFloat("_VoronoiWaveScale").ToString();
+        
+        //Map slider
+        SetMapSlider();
     }
 
     private float ConvertStringToFloat(string str)
