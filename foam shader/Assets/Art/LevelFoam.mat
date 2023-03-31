@@ -103,7 +103,7 @@ Material:
     - _Emission: 1
     - _EmissionAmount: 20
     - _EnvironmentReflections: 1
-    - _Foam: 1
+    - _Foam: 0
     - _FoamAmount: 1
     - _FoamCutof: 2.6
     - _FoamCutoff: 2
@@ -114,9 +114,9 @@ Material:
     - _GlossyReflections: 0
     - _GraientNoise: 1
     - _Metallic: 1
-    - _Modulo: 0
+    - _Modulo: 1
     - _NormalMapHeight: 0.1
-    - _Normal_Map: 0
+    - _Normal_Map: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
